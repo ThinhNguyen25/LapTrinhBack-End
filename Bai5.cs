@@ -1,17 +1,32 @@
-﻿        // Nhập số thứ nhất
-        Console.Write("Nhap so thu nhat: ");
-        double number1 = Convert.ToDouble(Console.ReadLine());
+﻿using System;
+
+class Program
+{
+    // Hàm hoán vị 2 số nguyên
+    static void SwapNumbers(ref int a, ref int b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+
+    static void Main(string[] args)
+    {
+        // Nhập số thứ nhất
+        Console.Write("Nhap so nguyen a: ");
+        int a = Convert.ToInt32(Console.ReadLine());
 
         // Nhập số thứ hai
-        Console.Write("Nhap so thu hai: ");
-        double number2 = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Nhap so nguyen b: ");
+        int b = Convert.ToInt32(Console.ReadLine());
 
-        // Tính tổng
-        double sum = number1 + number2;
+        // In giá trị trước khi hoán vị
+        Console.WriteLine($"Truoc khi hoan vi: a = {a}, b = {b}");
 
-        // Tính tích
-        double product = number1 * number2;
+        // Gọi hàm hoán vị
+        SwapNumbers(ref a, ref b);
 
-        // In kết quả
-        Console.WriteLine($"Tong cua {number1} va {number2} la: {sum}");
-        Console.WriteLine($"Tich cua {number1} va {number2} la: {product}");
+        // In giá trị sau khi hoán vị
+        Console.WriteLine($"Sau khi hoan vi: a = {a}, b = {b}");
+    }
+}
